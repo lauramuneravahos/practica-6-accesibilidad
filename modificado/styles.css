@@ -7,9 +7,10 @@ body {
   color: #2e2e2e;
 }
 
-/* I-10 · PENDIENTE: quitar este bloque y dar un outline visible con :focus-visible */
-*:focus {
-  outline: none !important;
+/* I-10 · APLICADO: indicador de foco visible con :focus-visible */
+:focus-visible {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
 }
 
 /* I-22 · PENDIENTE: estilo de .skip-link, oculto hasta que recibe el foco */
