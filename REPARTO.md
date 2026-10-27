@@ -33,7 +33,22 @@ Cada corrección tiene ya un comentario delante, en `modificado/`, con el ID de 
 // I-09 · PENDIENTE: ...
 ```
 
-Para localizarlas: `grep -n "I-" modificado/*` o buscar `PENDIENTE` con Ctrl+Mayús+F en VS Code. Al terminar el trabajo se borran todas: son una guía, no parte de la entrega.
+Para localizarlas: `grep -n "I-" modificado/*` o buscar `PENDIENTE` con Ctrl+Mayús+F en VS Code.
+
+**Cuando apliques una corrección, no borres el comentario: cámbialo de `PENDIENTE` a `APLICADO`.** Así queda a la vista qué se ha tocado, dónde y para qué:
+
+```html
+<!-- I-23 · PENDIENTE: añadir <meta name="viewport" ...> -->
+<!-- I-23 · APLICADO: etiqueta meta viewport para que el móvil no escale la página -->
+```
+
+Hay tres estados posibles:
+
+| Marca | Significado |
+|---|---|
+| `I-xx · PENDIENTE` | Falta por hacer |
+| `I-xx · APLICADO` | Corregida; el comentario describe lo que se hizo |
+| `I-xx · OK` | Se revisó y no hacía falta cambiar nada |
 
 Las de `original/` son distintas: señalan **dónde está el problema**, no dónde va el arreglo.
 
