@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- I-01 · APLICADO: el documento se declara en español -->
+<!--
+  MARCAS DE TRABAJO · Práctica 6
+  Cada comentario «I-xx · PENDIENTE» dice dónde va la corrección de esa incidencia
+  (apartado 6 de memoria.md). Al terminar, se borran todas las líneas de comentario
+  que empiecen por «I-xx».
+  Bloque 1: I-01, I-02, I-08, I-09, I-10, I-15, I-22, I-23
+  Bloque 2: I-06, I-11, I-12, I-13, I-14, I-16, I-24
+  Bloque 3: I-03, I-04, I-05, I-07, I-17, I-18, I-19, I-20, I-21, I-25
+-->
 <head>
+  <!-- I-23 · PENDIENTE: añadir <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <meta charset="UTF-8">
   <title>Escuela Politécnica Superior de Zamora | Universidad de Salamanca</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- I-22 · PENDIENTE: primer elemento del <body>: <a class="skip-link" href="#contenido">Saltar al contenido</a> -->
 
   <!-- CABECERA INSTITUCIONAL CON MENÚ DESPLEGABLE -->
   <header>
@@ -22,7 +34,9 @@
             <li><a href="#">Inicio</a></li>
             
             <li class="dropdown">
+              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-centro"> -->
               <a href="#" class="dropbtn">El Centro ▾</a>
+              <!-- I-08 · PENDIENTE: añadir id="menu-centro" al <ul> -->
               <ul class="dropdown-content">
                 <li><a href="#">Presentación y Saludo</a></li>
                 <li><a href="#">Equipo Directivo</a></li>
@@ -32,7 +46,9 @@
             </li>
 
             <li class="dropdown">
+              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-titulaciones"> -->
               <a href="#" class="dropbtn">Titulaciones ▾</a>
+              <!-- I-08 · PENDIENTE: añadir id="menu-titulaciones" al <ul> -->
               <ul class="dropdown-content">
                 <li><a href="#">Grados Universitarios</a></li>
                 <li><a href="#">Másteres Oficiales</a></li>
@@ -42,8 +58,11 @@
             </li>
 
             <li class="dropdown">
+              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-estudiantes"> -->
               <a href="#" class="dropbtn">Estudiantes ▾</a>
+              <!-- I-08 · PENDIENTE: añadir id="menu-estudiantes" al <ul> -->
               <ul class="dropdown-content">
+                <!-- I-15 · PENDIENTE: el <span> pasa a <a class="nav-item-btn" href="#"> y se quita su alert() -->
                 <li><span class="nav-item-btn" id="btn-portal">Portal Estudiantes</span></li>
                 <li><a href="#">Horarios y Aulas</a></li>
                 <li><a href="#">Exámenes y Calendario</a></li>
@@ -59,11 +78,14 @@
   </header>
 
   <!-- BANNER CIENTÍFICO / BÚSQUEDA Y CABECERA -->
+  <!-- I-22 · PENDIENTE: aria-label="Portada de la EPS de Zamora" en la <section> (no moverla dentro de <main>) -->
   <section class="hero-campus">
     <div class="hero-content">
+      <!-- I-02 · PENDIENTE: este <h2> pasa a <h1> (será el único de la página) -->
       <h2>Escuela Politécnica Superior de Zamora</h2>
       <p class="hero-subtitle">Ingeniería, Edificación y Tecnología en el Campus Viriato</p>
       
+      <!-- I-11 · PENDIENTE: envolver en <form role="search">, con un <label class="sr-only"> por campo y type="search" -->
       <div class="search-box">
         <input type="text" placeholder="Buscar grados, asignaturas, profesorado..." id="search-input">
         <input type="text" placeholder="Cód. Asignatura">
@@ -80,10 +102,13 @@
   <div class="main-layout">
     
     <!-- COLUMNA IZQUIERDA: ACCESOS DIRECTOS Y FILTROS -->
+    <!-- I-22 · PENDIENTE: aria-label="Accesos y filtros" en este <aside> -->
     <aside class="col-left">
       
       <div class="widget-box">
+        <!-- I-02 · PENDIENTE: h3 → h2 -->
         <h3>Servicios y Accesos</h3>
+        <!-- I-15 · PENDIENTE: los tres <a> necesitan href: #tfg, #practicas y #erasmus -->
         <ul class="sidebar-list">
           <li><a class="fake-link" id="link-ai">Trabajos Fin de Grado (TFG)</a></li>
           <li><a class="fake-link" id="link-energy">Prácticas en Empresas</a></li>
@@ -94,10 +119,13 @@
       <hr class="sidebar-divider">
 
       <div class="widget-box">
+        <!-- I-02 · PENDIENTE: h3 → h2 -->
         <h3>Filtrar Titulaciones</h3>
+        <!-- I-14 · PENDIENTE: reescribir el texto: en la página no hay «controles con forma circular» -->
         <p class="filter-instruction">Para filtrar la búsqueda, utilice los controles con forma circular ubicados en el bloque de la derecha.</p>
         
         <div class="filter-options">
+          <!-- I-14 · PENDIENTE: <custom-checkbox> pasa a <input type="checkbox" id="solo-vacantes"> con su <label> -->
           <custom-checkbox checked="false">Mostrar solo plazas vacantes</custom-checkbox>
         </div>
       </div>
@@ -113,9 +141,11 @@
     </aside>
 
     <!-- COLUMNA CENTRAL: NOTICIAS Y OFERTA ACADÉMICA -->
+    <!-- I-22 · PENDIENTE: añadir id="contenido" y tabindex="-1" (destino del enlace de salto) -->
     <main class="col-center">
       
       <div class="section-header">
+        <!-- I-02 · PENDIENTE: h3 → h2 -->
         <h3>Titulaciones de Grado y Posgrado</h3>
         <span class="results-count">Campus Viriato (Zamora)</span>
       </div>
@@ -124,12 +154,15 @@
         
         <!-- ARTÍCULO 1 -->
         <article class="academic-card">
+          <!-- I-18 · PENDIENTE: reescribir el alt: repite «imagen» y no describe la foto -->
           <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Imagen de la imagen del grado en ingenieria informatica">
           
           <div class="card-meta">
+            <!-- I-17 · PENDIENTE: añadir el estado en texto con .sr-only, no solo con el color (igual en las seis tarjetas) -->
             <span class="status-badge open-access"></span> Grado Oficial • 240 ECTS
           </div>
 
+          <!-- I-02 · PENDIENTE: h4 → h3 -->
           <h4 class="card-title">Grado en Ingeniería Informática en Sistemas de Información</h4>
           <p class="card-authors">Coordinador: Dr. Alberto Esteban</p>
           <p class="card-source">Especialidades en Desarrollo Web, Ciberseguridad e Inteligencia Artificial.</p>
@@ -139,17 +172,20 @@
             <span class="metric">Nota de corte: 7.82</span>
           </div>
 
+          <!-- I-19 · PENDIENTE: texto propio y en español («Ver el Grado en Ingeniería Informática») -->
           <a href="#" class="link-primary">Read more</a>
         </article>
 
         <!-- ARTÍCULO 2 -->
         <article class="academic-card">
+          <!-- I-18 · PENDIENTE: este alt vacío oculta una foto informativa: describirla -->
           <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=300&q=80" class="card-img" alt="">
           
           <div class="card-meta">
             <span class="status-badge restricted"></span> Grado Oficial • 240 ECTS
           </div>
 
+          <!-- I-02 · PENDIENTE: h4 → h3 -->
           <h4 class="card-title">Grado en Arquitectura Técnica e Ingeniería de Edificación</h4>
           <p class="card-authors">Coordinadora: Dra. María Hernández</p>
           <p class="card-source">Gestión de obras, rehabilitación energética y modelado BIM.</p>
@@ -159,6 +195,7 @@
             <span class="metric">Nota de corte: 5.00</span>
           </div>
 
+          <!-- I-19 · PENDIENTE: texto propio y en español («Ver el Grado en Arquitectura Técnica») -->
           <a href="#" class="link-primary">Read more</a>
         </article>
 
@@ -168,21 +205,25 @@
             <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="Icono de PDF"> Descargar Guía Académica Completa
           </div>
           
+          <!-- I-02 · PENDIENTE: h4 → h3 -->
           <h4 class="card-title card-title-spaced">Grado en Ingeniería Mecánica</h4>
           <p class="card-authors">Coordinador: Dr. Javier Gómez</p>
           <p class="card-source">Diseño de máquinas, estructuras industriales y sistemas térmicos.</p>
 
+          <!-- I-19 + I-25 · PENDIENTE: texto en español y avisar de que abre en pestaña nueva (o quitar target="_blank") -->
           <a href="https://example.com/pdf" target="_blank" class="link-primary">Download full text PDF</a>
         </article>
 
         <!-- ARTÍCULO 4 -->
         <article class="academic-card">
+          <!-- I-18 · OK: este alt ya describe la foto, no hace falta cambiarlo -->
           <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Paneles solares e instalaciones de energía renovable en el campus">
           
           <div class="card-meta">
             <span class="status-badge open-access"></span> Grado Oficial • 240 ECTS
           </div>
 
+          <!-- I-02 · PENDIENTE: h4 → h3 -->
           <h4 class="card-title">Grado en Ingeniería de la Energía y Recursos Mineros</h4>
           <p class="card-authors">Coordinador: Dr. Roberto Prieto</p>
           <p class="card-source">Eficiencia energética, energías renovables y gestión sostenible.</p>
@@ -203,6 +244,7 @@
             <span class="status-badge restricted"></span> Grado Oficial • 240 ECTS
           </div>
 
+          <!-- I-02 · PENDIENTE: h4 → h3 -->
           <h4 class="card-title">Grado en Ingeniería Agroalimentaria</h4>
           <p class="card-authors">Coordinadora: Dra. Ana Isabel Morales</p>
           <p class="card-source">Tecnología de alimentos, biotecnología agrícola y producción sostenible.</p>
@@ -223,6 +265,7 @@
             <span class="status-badge open-access"></span> Máster Oficial • 60 ECTS
           </div>
 
+          <!-- I-02 · PENDIENTE: h4 → h3 -->
           <h4 class="card-title">Máster Universitario en Ciberseguridad y Tecnologías Cloud</h4>
           <p class="card-authors">Director: Dr. Fernando Martínez</p>
           <p class="card-source">Especialización en auditoría, seguridad de datos y entornos virtuales.</p>
@@ -239,6 +282,7 @@
 
       <!-- FORMULARIO DE TRÁMITES -->
       <section class="newsletter-box">
+        <!-- I-02 · PENDIENTE: h6 → h2 -->
         <h6>Solicitud de Información y Admisión</h6>
         <p>Reciba detalles sobre los plazos de matriculación, becas y visitas al campus.</p>
         
@@ -246,17 +290,23 @@
           <p><span class="required-mark">*</span> Introduzca sus datos obligatorios:</p>
 
           <div class="form-group">
+            <!-- I-12 · PENDIENTE: un <label> por campo, required, autocomplete y mensaje de error (también en el correo) -->
             <input type="text" id="fname" placeholder="Nombre y apellidos del solicitante">
           </div>
           <div class="form-group">
+            <!-- I-06 · PENDIENTE: id="email-contact" (ahora se repite abajo, en el checkbox) -->
+            <!-- I-24 · PENDIENTE: type="email" y autocomplete="email" -->
             <input type="text" id="email-field" placeholder="Correo electrónico de contacto">
           </div>
 
           <div class="form-group-checkbox">
+            <!-- I-06 · PENDIENTE: id="accept-terms" -->
             <input type="checkbox" id="email-field"> 
+            <!-- I-13 · PENDIENTE: for="accept-terms" -->
             <label for="email-field">Acepto los términos y condiciones del tratamiento de datos</label>
           </div>
 
+          <!-- I-16 · PENDIENTE: el <div> pasa a <button type="submit"> (y en script.js, evento submit) -->
           <div class="custom-btn" id="btn-submit-form">Enviar Solicitud</div>
         </form>
       </section>
@@ -264,9 +314,11 @@
     </main>
 
     <!-- COLUMNA DERECHA: AGENDA Y EVENTOS DEL CAMPUS -->
+    <!-- I-22 · PENDIENTE: aria-label="Agenda e investigación" en este <aside> -->
     <aside class="col-right">
       
       <div class="widget-box">
+        <!-- I-02 · PENDIENTE: h3 → h2 -->
         <h3>Agenda del Campus</h3>
         <ul class="agenda-list">
           <li>
@@ -287,6 +339,7 @@
       <hr class="sidebar-divider">
 
       <div class="widget-box">
+        <!-- I-02 · PENDIENTE: h3 → h2 -->
         <h3>Investigación</h3>
         <p class="sidebar-text">Grupos de investigación destacados en robótica aplicada, materiales sostenibles e inteligencia artificial.</p>
       </div>
@@ -296,6 +349,7 @@
   </div>
 
   <!-- AVISO DE COOKIES -->
+  <!-- I-21 · PENDIENTE: role="region", aria-label y botones Aceptar y Rechazar que lo cierren -->
   <div class="cookie-banner">
     <p>La Universidad de Salamanca utiliza cookies propias y de terceros para fines analíticos. Al continuar navegando acepta su uso.</p>
   </div>
@@ -321,14 +375,17 @@
 
       <p class="footer-copy">© 2026 Escuela Politécnica Superior de Zamora — Universidad de Salamanca.</p>
       
+      <!-- I-05 · PENDIENTE: aria-label en los tres enlaces («Facebook de la EPS de Zamora», «X de la EPS de Zamora», «LinkedIn de la EPS de Zamora») -->
       <div class="social-links">
         <a href="#"><img src="https://via.placeholder.com/32x32?text=FB" alt=""></a>
         <a href="#"><img src="https://via.placeholder.com/32x32?text=TW" alt=""></a>
         <a href="#"><img src="https://via.placeholder.com/32x32?text=LN" alt=""></a>
       </div>
 
+      <!-- I-07 · PENDIENTE: cerrar el párrafo sin el <div> de dentro ni el cierre sobrante -->
       <p class="trademark-text">EPS Zamora® es una marca académica registrada de la USAL.<div></p></div>
 
+      <!-- I-20 · PENDIENTE: eliminar el <audio autoplay> y su regla #bg-audio en styles.css -->
       <audio id="bg-audio" autoplay loop>
         <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
       </audio>
