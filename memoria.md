@@ -10,6 +10,7 @@
 | Grupo | 8 |
 | Integrantes | Laura Munera Vahos, Iago Fernández Varela e Inés Otero Amon |
 | Página analizada | `index.html`, `styles.css` y `script.js` (versión original) |
+| Repositorio | https://github.com/lauramuneravahos/practica-6-accesibilidad |
 | Fecha | Octubre de 2026 |
 
 ---
@@ -563,7 +564,9 @@ Cuando apliquemos los cambios, repetiremos estas comprobaciones sobre la versió
 
 ## 8. Publicación de las dos versiones
 
-Hay que publicar las dos versiones de la página para poder pasar T.A.W. y AChecker. Proponemos esta estructura en GitHub Pages:
+Hay que publicar las dos versiones de la página para poder pasar T.A.W. y AChecker. El proyecto ya está subido a GitHub, en un repositorio público:
+
+**https://github.com/lauramuneravahos/practica-6-accesibilidad**
 
 ```
 /
@@ -571,17 +574,21 @@ Hay que publicar las dos versiones de la página para poder pasar T.A.W. y AChec
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-├── accesible/         ← la versión corregida
+├── modificado/        ← la versión que corregimos
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-└── memoria.md
+├── imgs/
+├── memoria.md
+└── README.md
 ```
 
 | Versión | Dirección |
 |---|---|
-| Original | `https://<usuario>.github.io/<repositorio>/original/` |
-| Accesible | `https://<usuario>.github.io/<repositorio>/accesible/` |
+| Original | `https://lauramuneravahos.github.io/practica-6-accesibilidad/original/` |
+| Modificada | `https://lauramuneravahos.github.io/practica-6-accesibilidad/modificado/` |
+
+Esas direcciones todavía **no responden** (dan 404) porque falta activar GitHub Pages: en el repositorio, *Settings → Pages → Deploy from a branch*, rama `main` y carpeta `/ (root)`. Mientras no esté activado, T.A.W. y AChecker no pueden analizar la página, porque necesitan una URL pública.
 
 ---
 
