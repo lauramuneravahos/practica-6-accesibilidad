@@ -1,3 +1,4 @@
+/* MARCAS DE TRABAJO · cada «I-xx · PENDIENTE» señala dónde va una corrección (apartado 6 de memoria.md); al terminar, borrar todas las marcas */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -6,10 +7,12 @@ body {
   color: #2e2e2e;
 }
 
+/* I-10 · PENDIENTE: quitar este bloque y dar un outline visible con :focus-visible */
 *:focus {
   outline: none !important;
 }
 
+/* I-22 · PENDIENTE: estilo de .skip-link, oculto hasta que recibe el foco */
 /* HEADER Y CABECERA */
 header {
   background-color: #7a0026;
@@ -31,6 +34,7 @@ header {
   flex-direction: column;
 }
 
+/* I-03 · PENDIENTE: color #c85a7c → #f3d2dc (2,81:1 → 8,12:1) */
 .logo-text {
   font-size: 26px;
   font-weight: bold;
@@ -45,6 +49,7 @@ header {
 }
 
 /* MENÚ NAVEGACIÓN Y DESPLEGABLES */
+/* I-09 · PENDIENTE: que esta regla no alcance a los submenús: .main-nav ul.dropdown-content { display: none; } */
 .main-nav ul {
   list-style: none;
   margin: 0;
@@ -90,6 +95,7 @@ header {
   color: #7a0026;
 }
 
+/* I-08 · PENDIENTE: el panel se abre con la clase .is-open que pone script.js, no solo con :hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -107,6 +113,7 @@ header {
   padding: 0 20px;
 }
 
+/* I-02 · PENDIENTE: .hero-campus h2 → .hero-campus h1 */
 .hero-campus h2 {
   margin: 0;
   color: #520019;
@@ -162,6 +169,7 @@ header {
   padding: 0 20px;
 }
 
+/* I-02 · PENDIENTE: .widget-box h3 → .widget-box h2 */
 .widget-box h3 {
   margin: 0 0 12px 0;
   font-size: 16px;
@@ -235,6 +243,7 @@ header {
   margin-bottom: 20px;
 }
 
+/* I-02 · PENDIENTE: .section-header h3 → .section-header h2 */
 .section-header h3 {
   margin: 0;
   color: #7a0026;
@@ -263,6 +272,7 @@ header {
   justify-content: space-between;
 }
 
+/* I-04 · PENDIENTE: color #aaa → #595959 (2,32:1 → 7,00:1) */
 .card-meta {
   color: #aaa;
   font-size: 11px;
@@ -368,6 +378,7 @@ header {
   border: 1px solid #ffeba3;
 }
 
+/* I-02 · PENDIENTE: .newsletter-box h6 → .newsletter-box h2 */
 .newsletter-box h6 {
   margin: 0 0 8px 0;
   font-size: 15px;
@@ -382,6 +393,7 @@ header {
 
 .required-mark { color: red; font-weight: bold; }
 
+/* I-12 · PENDIENTE: estilo del mensaje de error que se añade bajo cada campo */
 .form-group { margin-bottom: 10px; }
 
 .form-group input {
@@ -396,6 +408,7 @@ header {
   font-size: 12px;
 }
 
+/* I-16 · PENDIENTE: al pasar a <button>, resetear borde, fuente y color del navegador */
 .custom-btn {
   background: #7a0026;
   color: #ffffff;
@@ -408,6 +421,7 @@ header {
 }
 
 /* COOKIES Y FOOTER */
+/* I-21 · PENDIENTE: dejar hueco a los botones y permitir que el aviso se cierre */
 .cookie-banner {
   background: #333;
   color: #fff;
@@ -460,6 +474,7 @@ footer {
   gap: 12px;
 }
 
+/* I-17 · PENDIENTE: el color deja de ser el único indicador (el texto va en .sr-only, en el HTML) */
 .status-badge {
   display: inline-block;
   width: 8px;
@@ -471,4 +486,7 @@ footer {
 .open-access { background-color: #00aa00; }
 .restricted { background-color: #ff0000; }
 
+/* I-20 · PENDIENTE: borrar esta regla junto con el <audio> */
 #bg-audio { display: none; }
+
+/* I-11 + I-12 + I-17 · PENDIENTE: crear aquí .sr-only (texto visible solo para lectores de pantalla) */
