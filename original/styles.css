@@ -1,0 +1,483 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f4f7;
+  color: #2e2e2e;
+}
+
+/* I-10 · Esto quita el foco de TODOS los elementos: con Tab no se ve por dónde vas. */
+*:focus {
+  outline: none !important;
+}
+
+/* HEADER Y CABECERA */
+header {
+  background-color: #7a0026;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: bold;
+  /* I-03 · #c85a7c sobre el #7a0026 de la cabecera da 2,81:1; para texto grande el mínimo es 3:1. */
+  color: #c85a7c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sub-logo {
+  font-size: 11px;
+  color: #f3d2dc;
+}
+
+/* MENÚ NAVEGACIÓN Y DESPLEGABLES */
+/* I-09 · Ojo: este display:flex (0,1,1) gana por especificidad al .dropdown-content (0,1,0) de más abajo. */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav a, .nav-item-btn {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 12px;
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* I-09 · Este display:none no llega a aplicarse: los paneles se ven siempre y se solapan. */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  top: 100%;
+  left: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-content a, .dropdown-content .nav-item-btn {
+  color: #333;
+  padding: 12px 16px;
+  font-weight: normal;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover, .dropdown-content .nav-item-btn:hover {
+  background-color: #f5f5f5;
+  color: #7a0026;
+}
+
+/* I-08 · Solo se abre con :hover. Con teclado o en una tableta no hay manera. */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* HERO BANNER */
+.hero-campus {
+  background-color: #eadddf;
+  padding: 35px 0;
+  border-bottom: 1px solid #d4bcc2;
+}
+
+.hero-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-campus h2 {
+  margin: 0;
+  color: #520019;
+  font-size: 24px;
+}
+
+.hero-subtitle {
+  margin: 5px 0 15px 0;
+  color: #7a0026;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  max-width: 900px;
+}
+
+.search-box input {
+  padding: 10px;
+  border: 1px solid #cca3b0;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.search-box input:first-child { flex: 3; }
+.search-box input:nth-child(2) { flex: 1; }
+
+.btn-search {
+  background-color: #7a0026;
+  color: #ffffff;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.search-info {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #5c434b;
+}
+
+/* ESTRUCTURA DE 3 COLUMNAS */
+.main-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  gap: 25px;
+  max-width: 1280px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.widget-box h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #7a0026;
+  border-bottom: 2px solid #7a0026;
+  padding-bottom: 5px;
+}
+
+.sidebar-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.sidebar-list li { margin-bottom: 10px; }
+
+.fake-link {
+  cursor: pointer;
+  color: #7a0026;
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.sidebar-divider {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.filter-instruction {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.sponsor-card {
+  background: #fdf5f7;
+  padding: 12px;
+  border-radius: 3px;
+  border-left: 3px solid #7a0026;
+}
+
+.sponsor-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  background: #f3d2dc;
+  padding: 2px 6px;
+  border-radius: 2px;
+  color: #520019;
+  font-weight: bold;
+}
+
+.sponsor-title {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 6px 0 4px 0;
+}
+
+.sponsor-desc {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+/* COLUMNA CENTRAL: NOTICIAS Y ARTÍCULOS */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid #7a0026;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: #7a0026;
+  font-size: 20px;
+}
+
+.results-count {
+  font-size: 13px;
+  color: #666;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.academic-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #e1e5e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* I-04 · #aaa sobre blanco da 2,32:1; hace falta 4,5:1. */
+.card-meta {
+  color: #aaa;
+  font-size: 11px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.card-title {
+  color: #7a0026;
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+
+.card-title-spaced { margin-top: 10px; }
+
+.card-authors {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+  color: #444;
+}
+
+.card-source {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.metrics-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  color: #555;
+  background: #f8f9fa;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+
+.card-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.pdf-indicator {
+  font-size: 12px;
+  color: #c00;
+  font-weight: bold;
+}
+
+.link-primary {
+  color: #7a0026;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* AGENDA Y EVENTOS (COLUMNA DERECHA) */
+.agenda-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.agenda-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.event-date {
+  background: #7a0026;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 45px;
+}
+
+.event-title {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.sidebar-text {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* FORMULARIO DE TRÁMITES */
+.newsletter-box {
+  background: #fff3cd;
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 30px;
+  border: 1px solid #ffeba3;
+}
+
+.newsletter-box h6 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: #856404;
+}
+
+.newsletter-box p {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: #856404;
+}
+
+.required-mark { color: red; font-weight: bold; }
+
+.form-group { margin-bottom: 10px; }
+
+.form-group input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-group-checkbox {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.custom-btn {
+  background: #7a0026;
+  color: #ffffff;
+  display: inline-block;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+/* COOKIES Y FOOTER */
+/* I-21 · position: fixed abajo, todo el ancho y sin botones: tapa el pie y no se puede cerrar. */
+.cookie-banner {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  z-index: 99;
+}
+
+footer {
+  background: #1a1a1a;
+  color: #a0a0a0;
+  padding: 35px 0 25px 0;
+  margin-top: 50px;
+  font-size: 12px;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.footer-contact-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon { filter: invert(0.8); }
+
+.social-links {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.status-badge {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+/* I-17 · El estado se comunica solo con el color (verde/rojo), sin ningún texto que lo diga. */
+.open-access { background-color: #00aa00; }
+.restricted { background-color: #ff0000; }
+
+/* I-20 · Ocultarlo no quita el autoplay: el audio sigue sonando y no hay forma de pararlo. */
+#bg-audio { display: none; }
