@@ -17,6 +17,26 @@ Los tres vamos a tocar `index.html`, así que conviene trabajar siempre igual:
 4. **`original/` no se toca.** Las correcciones van solo en `modificado/`.
 5. Los merges se hacen **en orden 1 → 2 → 3**, para que los cambios de estructura entren primero.
 
+## Marcas en el código
+
+Cada corrección tiene ya un comentario delante, en `modificado/`, con el ID de la incidencia:
+
+```html
+<!-- I-09 · PENDIENTE: ... -->
+```
+
+```css
+/* I-09 · PENDIENTE: ... */
+```
+
+```js
+// I-09 · PENDIENTE: ...
+```
+
+Para localizarlas: `grep -n "I-" modificado/*` o buscar `PENDIENTE` con Ctrl+Mayús+F en VS Code. Al terminar el trabajo se borran todas: son una guía, no parte de la entrega.
+
+Las de `original/` son distintas: señalan **dónde está el problema**, no dónde va el arreglo.
+
 ## Cómo crear tu rama (y no trabajar en `main`)
 
 Cada uno tiene ya su nombre de rama:
