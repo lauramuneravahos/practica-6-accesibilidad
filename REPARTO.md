@@ -37,6 +37,66 @@ Para localizarlas: `grep -n "I-" modificado/*` o buscar `PENDIENTE` con Ctrl+May
 
 Las de `original/` son distintas: señalan **dónde está el problema**, no dónde va el arreglo.
 
+## Cómo clonar y abrir el repositorio
+
+Solo se hace la primera vez. Si ya lo tienes clonado, salta a «Cómo crear tu rama».
+
+### 1. Comprueba que tienes Git
+
+Abre una terminal (vale **Git Bash** o **PowerShell**) y escribe:
+
+```powershell
+git --version
+```
+
+Si responde con un número (`git version 2.x`), listo. Si dice que no se reconoce el comando, instala Git desde <https://git-scm.com/download/win> y vuelve a abrir la terminal.
+
+### 2. Clona el repositorio
+
+Sitúate en la carpeta donde guardes las prácticas y clona:
+
+```powershell
+cd ~/Documents
+git clone https://github.com/lauramuneravahos/practica-6-accesibilidad.git
+cd practica-6-accesibilidad
+```
+
+Se crea una carpeta `practica-6-accesibilidad` con todo dentro. Intenta **no clonarla dentro de OneDrive**: la sincronización automática se lleva mal con Git y acaba dando conflictos raros.
+
+El repositorio es público, así que se descarga sin cuenta. Para **subir** cambios sí hay que ser colaborador: acepta la invitación que llega al correo o entra en el repositorio → *Settings → Collaborators*.
+
+### 3. Ábrela en VS Code
+
+```powershell
+code .
+```
+
+Si `code` no funciona, abre VS Code y usa *File → Open Folder…*, o instala el comando desde VS Code con **Ctrl+Mayús+P** → «Install 'code' command in PATH».
+
+Dentro de VS Code, abre la terminal integrada con **Ctrl+ñ** (o *Terminal → New Terminal*). Ya estarás en la carpeta del proyecto, sin necesidad de `cd`.
+
+### 4. Mira la página en el navegador
+
+```powershell
+python -m http.server 8765
+```
+
+Y abre:
+
+- Original: <http://localhost:8765/original/index.html>
+- Modificada: <http://localhost:8765/modificado/index.html>
+
+Deja esa terminal abierta mientras trabajas; el servidor se para con **Ctrl+C**. Para recargar sin caché, **Ctrl+F5**. Si `python` no se reconoce, prueba con `py -m http.server 8765`.
+
+### 5. Comprueba dónde estás
+
+```powershell
+git status
+git branch --show-current
+```
+
+Debe poner `main` y no listar ningún archivo modificado.
+
 ## Cómo crear tu rama (y no trabajar en `main`)
 
 Cada uno tiene ya su nombre de rama:
@@ -47,10 +107,12 @@ Cada uno tiene ya su nombre de rama:
 | Iago | `fix/formulario` |
 | Inés | `fix/contenido` |
 
-### 1. Sitúate en la carpeta y mira dónde estás
+### 1. Sitúate en la carpeta del proyecto
+
+Si vienes de clonar, ya estás dentro. Si abres la terminal más tarde:
 
 ```powershell
-cd "C:\Users\laura\Documents\USAL\Cuarto\Primer Semestre\Evaluacion y Diseño de Interfaces\Tema 6. Internacionalización\Practica 6"
+cd ~/Documents/practica-6-accesibilidad
 git status
 git branch --show-current
 ```
@@ -128,6 +190,8 @@ La rama remota se puede borrar desde el propio pull request con «Delete branch�
 | Situación | Qué hacer |
 |---|---|
 | `fatal: not a git repository` | Estás en otra carpeta: vuelve con `cd` a la de la práctica |
+| `python` no se reconoce | Prueba `py -m http.server 8765` |
+| `code` no se reconoce | Instálalo con Ctrl+Mayús+P → «Install 'code' command in PATH», o abre la carpeta desde *File → Open Folder…* |
 | Has hecho cambios en `main` sin commitear | `git switch -c fix/cabecera`: los cambios se van contigo a la rama nueva |
 | Has commiteado en `main` | `git branch fix/cabecera` y después `git reset --hard origin/main`; tu commit se queda en la rama |
 | El `push` se rechaza | Alguien subió antes: `git pull --rebase` y reintenta. Si se lía, avisa |
