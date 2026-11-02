@@ -429,7 +429,6 @@ header {
   font-size: 12px;
 }
 
-/* I-16 · PENDIENTE: al pasar a <button>, resetear borde, fuente y color del navegador */
 .custom-btn {
   background: #7a0026;
   color: #ffffff;
@@ -439,6 +438,8 @@ header {
   font-weight: bold;
   border-radius: 3px;
   font-size: 13px;
+  border: none;
+  font-family: inherit;
 }
 
 /* COOKIES Y FOOTER */

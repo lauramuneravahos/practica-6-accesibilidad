@@ -10,12 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // I-16 · PENDIENTE: escuchar el evento submit del formulario, no el click del <div>
-  const btnSubmit = document.getElementById('btn-submit-form');
   const newsletterForm = document.getElementById('newsletter-form');
-  
-  if (btnSubmit && newsletterForm) {
-    btnSubmit.addEventListener('click', () => {
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       alert('¡Solicitud enviada correctamente!');
     });
   }
