@@ -395,7 +395,26 @@ header {
 
 .required-mark { color: red; font-weight: bold; }
 
-/* I-12 · PENDIENTE: estilo del mensaje de error que se añade bajo cada campo */
+/* Estilos para etiquetas y mensajes de error en formulario (I-12) */
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.error-message {
+  display: none;
+  color: #a71d2a;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.form-group input:invalid:not(:placeholder-shown) ~ .error-message {
+  display: block;
+}
+
 .form-group { margin-bottom: 10px; }
 
 .form-group input {

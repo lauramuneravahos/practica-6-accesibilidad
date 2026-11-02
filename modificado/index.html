@@ -289,16 +289,19 @@
         <h6>Solicitud de Información y Admisión</h6>
         <p>Reciba detalles sobre los plazos de matriculación, becas y visitas al campus.</p>
         
-        <form id="newsletter-form">
+        <form id="newsletter-form" action="#" method="post">
           <p><span class="required-mark">*</span> Introduzca sus datos obligatorios:</p>
 
           <div class="form-group">
-            <!-- I-12 · PENDIENTE: un <label> por campo, required, autocomplete y mensaje de error (también en el correo) -->
-            <input type="text" id="fname" placeholder="Nombre y apellidos del solicitante">
+            <label for="full-name">Nombre y apellidos <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" name="full-name" autocomplete="name" required placeholder="Nombre y apellidos del solicitante" aria-describedby="error-name">
+            <span class="error-message" id="error-name">El nombre y apellidos son obligatorios.</span>
           </div>
           <div class="form-group">
+            <label for="email-contact">Correo electrónico <span class="required-mark" aria-hidden="true">*</span></label>
             <!-- I-24 · PENDIENTE: type="email" y autocomplete="email" -->
-            <input type="text" id="email-contact" placeholder="Correo electrónico de contacto">
+            <input type="text" id="email-contact" placeholder="Correo electrónico de contacto" required aria-describedby="error-email">
+            <span class="error-message" id="error-email">Introduzca una dirección de correo electrónico válida.</span>
           </div>
 
           <div class="form-group-checkbox">
