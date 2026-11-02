@@ -474,7 +474,7 @@ footer {
   gap: 12px;
 }
 
-/* I-17 · PENDIENTE: el color deja de ser el único indicador (el texto va en .sr-only, en el HTML) */
+
 .status-badge {
   display: inline-block;
   width: 8px;
@@ -488,4 +488,15 @@ footer {
 
 
 
-/* I-11 + I-12 + I-17 · PENDIENTE: crear aquí .sr-only (texto visible solo para lectores de pantalla) */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
