@@ -421,7 +421,7 @@ header {
 }
 
 /* COOKIES Y FOOTER */
-/* I-21 · PENDIENTE: dejar hueco a los botones y permitir que el aviso se cierre */
+
 .cookie-banner {
   background: #333;
   color: #fff;
@@ -429,9 +429,18 @@ header {
   position: fixed;
   bottom: 0;
   width: 100%;
+  box-sizing: border-box;
   font-size: 12px;
   text-align: center;
   z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.cookie-banner.hidden {
+  display: none;
 }
 
 footer {
