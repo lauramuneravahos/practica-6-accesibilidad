@@ -272,9 +272,9 @@ header {
   justify-content: space-between;
 }
 
-/* I-04 · PENDIENTE: color #aaa → #595959 (2,32:1 → 7,00:1) */
+
 .card-meta {
-  color: #aaa;
+  color: #595959;
   font-size: 11px;
   margin-bottom: 8px;
   font-weight: bold;
