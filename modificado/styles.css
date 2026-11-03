@@ -1,4 +1,4 @@
-/* MARCAS DE TRABAJO · cada «I-xx · PENDIENTE» señala dónde va una corrección (apartado 6 de memoria.md); al terminar, borrar todas las marcas */
+/* MARCAS DE TRABAJO · las marcas «I-xx · APLICADO» señalan dónde está cada corrección (apartado 6 de memoria.md) */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -487,8 +487,14 @@ header {
   gap: 15px;
 }
 
+/* I-21 · APLICADO: el aviso se cierra con los botones Aceptar y Rechazar */
 .cookie-banner.hidden {
   display: none;
+}
+
+/* I-21 · APLICADO: hueco para que el aviso no tape el pie mientras está visible */
+body.has-cookie {
+  padding-bottom: 70px;
 }
 
 footer {

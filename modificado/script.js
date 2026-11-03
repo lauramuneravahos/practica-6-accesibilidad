@@ -1,4 +1,4 @@
-// MARCAS DE TRABAJO · cada «I-xx · PENDIENTE» señala dónde va una corrección (apartado 6 de memoria.md); al terminar, borrar todas las marcas
+// MARCAS DE TRABAJO · las marcas «I-xx · APLICADO» señalan dónde está cada corrección (apartado 6 de memoria.md)
 document.addEventListener('DOMContentLoaded', () => {
 
   // I-08 · APLICADO: menú desplegable accesible con ratón y con teclado
@@ -61,5 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // I-21 · PENDIENTE: cerrar el aviso de cookies desde los botones Aceptar y Rechazar
+  // I-21 · APLICADO: los botones Aceptar y Rechazar cierran el aviso de cookies
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    document.body.classList.add('has-cookie');
+    cookieBanner.querySelectorAll('button').forEach((boton) => {
+      boton.addEventListener('click', () => {
+        cookieBanner.classList.add('hidden');
+        document.body.classList.remove('has-cookie');
+      });
+    });
+  }
 });
