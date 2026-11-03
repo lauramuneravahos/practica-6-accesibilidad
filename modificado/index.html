@@ -4,20 +4,23 @@
 <!--
   MARCAS DE TRABAJO · Práctica 6
   Cada comentario «I-xx · PENDIENTE» dice dónde va la corrección de esa incidencia
-  (apartado 6 de memoria.md). Al terminar, se borran todas las líneas de comentario
-  que empiecen por «I-xx».
+  (apartado 6 de memoria.md). Al aplicarla, la marca pasa a «I-xx · APLICADO» y se
+  queda en el código, para que se vea qué se ha cambiado. «I-xx · OK» señala algo
+  que se revisó y no hacía falta tocar.
   Bloque 1: I-01, I-02, I-08, I-09, I-10, I-15, I-22, I-23
   Bloque 2: I-06, I-11, I-12, I-13, I-14, I-16, I-24
   Bloque 3: I-03, I-04, I-05, I-07, I-17, I-18, I-19, I-20, I-21, I-25
 -->
 <head>
-  <!-- I-23 · PENDIENTE: añadir <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <meta charset="UTF-8">
+  <!-- I-23 · APLICADO: etiqueta meta viewport para que el móvil no escale la página -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Escuela Politécnica Superior de Zamora | Universidad de Salamanca</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- I-22 · PENDIENTE: primer elemento del <body>: <a class="skip-link" href="#contenido">Saltar al contenido</a> -->
+  <!-- I-22 · APLICADO: primer elemento del <body>, enlace de salto al contenido -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- CABECERA INSTITUCIONAL CON MENÚ DESPLEGABLE -->
   <header>
@@ -34,10 +37,10 @@
             <li><a href="#">Inicio</a></li>
             
             <li class="dropdown">
-              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-centro"> -->
-              <a href="#" class="dropbtn">El Centro ▾</a>
-              <!-- I-08 · PENDIENTE: añadir id="menu-centro" al <ul> -->
-              <ul class="dropdown-content">
+              <!-- I-08 · APLICADO: el disparador es un <button> con aria-expanded y aria-controls -->
+              <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-centro">El Centro ▾</button>
+              <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
+              <ul class="dropdown-content" id="menu-centro">
                 <li><a href="#">Presentación y Saludo</a></li>
                 <li><a href="#">Equipo Directivo</a></li>
                 <li><a href="#">Juntas y Comisiones</a></li>
@@ -46,10 +49,10 @@
             </li>
 
             <li class="dropdown">
-              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-titulaciones"> -->
-              <a href="#" class="dropbtn">Titulaciones ▾</a>
-              <!-- I-08 · PENDIENTE: añadir id="menu-titulaciones" al <ul> -->
-              <ul class="dropdown-content">
+              <!-- I-08 · APLICADO: el disparador es un <button> con aria-expanded y aria-controls -->
+              <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-titulaciones">Titulaciones ▾</button>
+              <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
+              <ul class="dropdown-content" id="menu-titulaciones">
                 <li><a href="#">Grados Universitarios</a></li>
                 <li><a href="#">Másteres Oficiales</a></li>
                 <li><a href="#">Doctorado e Investigación</a></li>
@@ -58,12 +61,12 @@
             </li>
 
             <li class="dropdown">
-              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-estudiantes"> -->
-              <a href="#" class="dropbtn">Estudiantes ▾</a>
-              <!-- I-08 · PENDIENTE: añadir id="menu-estudiantes" al <ul> -->
-              <ul class="dropdown-content">
-                <!-- I-15 · PENDIENTE: el <span> pasa a <a class="nav-item-btn" href="#"> y se quita su alert() -->
-                <li><span class="nav-item-btn" id="btn-portal">Portal Estudiantes</span></li>
+              <!-- I-08 · APLICADO: el disparador es un <button> con aria-expanded y aria-controls -->
+              <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-estudiantes">Estudiantes ▾</button>
+              <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
+              <ul class="dropdown-content" id="menu-estudiantes">
+                <!-- I-15 · APLICADO: el portal es un enlace real y ya no abre un alert() -->
+                <li><a class="nav-item-btn" href="#">Portal Estudiantes</a></li>
                 <li><a href="#">Horarios y Aulas</a></li>
                 <li><a href="#">Exámenes y Calendario</a></li>
                 <li><a href="#">Prácticas en Empresas</a></li>
@@ -78,11 +81,11 @@
   </header>
 
   <!-- BANNER CIENTÍFICO / BÚSQUEDA Y CABECERA -->
-  <!-- I-22 · PENDIENTE: aria-label="Portada de la EPS de Zamora" en la <section> (no moverla dentro de <main>) -->
-  <section class="hero-campus">
+  <!-- I-22 · APLICADO: la sección lleva nombre, así cuenta como landmark y no queda suelta -->
+  <section class="hero-campus" aria-label="Portada de la EPS de Zamora">
     <div class="hero-content">
-      <!-- I-02 · PENDIENTE: este <h2> pasa a <h1> (será el único de la página) -->
-      <h2>Escuela Politécnica Superior de Zamora</h2>
+      <!-- I-02 · APLICADO: h2 → h1 (será el único de la página) -->
+      <h1>Escuela Politécnica Superior de Zamora</h1>
       <p class="hero-subtitle">Ingeniería, Edificación y Tecnología en el Campus Viriato</p>
       
       <!-- I-11 · PENDIENTE: envolver en <form role="search">, con un <label class="sr-only"> por campo y type="search" -->
@@ -102,25 +105,25 @@
   <div class="main-layout">
     
     <!-- COLUMNA IZQUIERDA: ACCESOS DIRECTOS Y FILTROS -->
-    <!-- I-22 · PENDIENTE: aria-label="Accesos y filtros" en este <aside> -->
-    <aside class="col-left">
+    <!-- I-22 · APLICADO: el <aside> lleva nombre para distinguirlo del otro -->
+    <aside class="col-left" aria-label="Accesos y filtros">
       
       <div class="widget-box">
-        <!-- I-02 · PENDIENTE: h3 → h2 -->
-        <h3>Servicios y Accesos</h3>
-        <!-- I-15 · PENDIENTE: los tres <a> necesitan href: #tfg, #practicas y #erasmus -->
+        <!-- I-02 · APLICADO: h3 → h2 -->
+        <h2>Servicios y Accesos</h2>
+        <!-- I-15 · APLICADO: los accesos son enlaces reales, con href -->
         <ul class="sidebar-list">
-          <li><a class="fake-link" id="link-ai">Trabajos Fin de Grado (TFG)</a></li>
-          <li><a class="fake-link" id="link-energy">Prácticas en Empresas</a></li>
-          <li><a class="fake-link" id="link-biotech">Programas de Movilidad Erasmus</a></li>
+          <li><a class="fake-link" href="#tfg">Trabajos Fin de Grado (TFG)</a></li>
+          <li><a class="fake-link" href="#practicas">Prácticas en Empresas</a></li>
+          <li><a class="fake-link" href="#erasmus">Programas de Movilidad Erasmus</a></li>
         </ul>
       </div>
 
       <hr class="sidebar-divider">
 
       <div class="widget-box">
-        <!-- I-02 · PENDIENTE: h3 → h2 -->
-        <h3>Filtrar Titulaciones</h3>
+        <!-- I-02 · APLICADO: h3 → h2 -->
+        <h2>Filtrar Titulaciones</h2>
         <!-- I-14 · PENDIENTE: reescribir el texto: en la página no hay «controles con forma circular» -->
         <p class="filter-instruction">Para filtrar la búsqueda, utilice los controles con forma circular ubicados en el bloque de la derecha.</p>
         
@@ -141,12 +144,12 @@
     </aside>
 
     <!-- COLUMNA CENTRAL: NOTICIAS Y OFERTA ACADÉMICA -->
-    <!-- I-22 · PENDIENTE: añadir id="contenido" y tabindex="-1" (destino del enlace de salto) -->
-    <main class="col-center">
+    <!-- I-22 · APLICADO: id y tabindex para que el enlace de salto pueda llevar el foco aquí -->
+    <main class="col-center" id="contenido" tabindex="-1">
       
       <div class="section-header">
-        <!-- I-02 · PENDIENTE: h3 → h2 -->
-        <h3>Titulaciones de Grado y Posgrado</h3>
+        <!-- I-02 · APLICADO: h3 → h2 -->
+        <h2>Titulaciones de Grado y Posgrado</h2>
         <span class="results-count">Campus Viriato (Zamora)</span>
       </div>
 
@@ -162,8 +165,8 @@
             <span class="status-badge open-access"></span> Grado Oficial • 240 ECTS
           </div>
 
-          <!-- I-02 · PENDIENTE: h4 → h3 -->
-          <h4 class="card-title">Grado en Ingeniería Informática en Sistemas de Información</h4>
+          <!-- I-02 · APLICADO: h4 → h3 -->
+          <h3 class="card-title">Grado en Ingeniería Informática en Sistemas de Información</h3>
           <p class="card-authors">Coordinador: Dr. Alberto Esteban</p>
           <p class="card-source">Especialidades en Desarrollo Web, Ciberseguridad e Inteligencia Artificial.</p>
 
@@ -185,8 +188,8 @@
             <span class="status-badge restricted"></span> Grado Oficial • 240 ECTS
           </div>
 
-          <!-- I-02 · PENDIENTE: h4 → h3 -->
-          <h4 class="card-title">Grado en Arquitectura Técnica e Ingeniería de Edificación</h4>
+          <!-- I-02 · APLICADO: h4 → h3 -->
+          <h3 class="card-title">Grado en Arquitectura Técnica e Ingeniería de Edificación</h3>
           <p class="card-authors">Coordinadora: Dra. María Hernández</p>
           <p class="card-source">Gestión de obras, rehabilitación energética y modelado BIM.</p>
 
@@ -205,8 +208,8 @@
             <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="Icono de PDF"> Descargar Guía Académica Completa
           </div>
           
-          <!-- I-02 · PENDIENTE: h4 → h3 -->
-          <h4 class="card-title card-title-spaced">Grado en Ingeniería Mecánica</h4>
+          <!-- I-02 · APLICADO: h4 → h3 -->
+          <h3 class="card-title card-title-spaced">Grado en Ingeniería Mecánica</h3>
           <p class="card-authors">Coordinador: Dr. Javier Gómez</p>
           <p class="card-source">Diseño de máquinas, estructuras industriales y sistemas térmicos.</p>
 
@@ -223,8 +226,8 @@
             <span class="status-badge open-access"></span> Grado Oficial • 240 ECTS
           </div>
 
-          <!-- I-02 · PENDIENTE: h4 → h3 -->
-          <h4 class="card-title">Grado en Ingeniería de la Energía y Recursos Mineros</h4>
+          <!-- I-02 · APLICADO: h4 → h3 -->
+          <h3 class="card-title">Grado en Ingeniería de la Energía y Recursos Mineros</h3>
           <p class="card-authors">Coordinador: Dr. Roberto Prieto</p>
           <p class="card-source">Eficiencia energética, energías renovables y gestión sostenible.</p>
 
@@ -244,8 +247,8 @@
             <span class="status-badge restricted"></span> Grado Oficial • 240 ECTS
           </div>
 
-          <!-- I-02 · PENDIENTE: h4 → h3 -->
-          <h4 class="card-title">Grado en Ingeniería Agroalimentaria</h4>
+          <!-- I-02 · APLICADO: h4 → h3 -->
+          <h3 class="card-title">Grado en Ingeniería Agroalimentaria</h3>
           <p class="card-authors">Coordinadora: Dra. Ana Isabel Morales</p>
           <p class="card-source">Tecnología de alimentos, biotecnología agrícola y producción sostenible.</p>
 
@@ -265,8 +268,8 @@
             <span class="status-badge open-access"></span> Máster Oficial • 60 ECTS
           </div>
 
-          <!-- I-02 · PENDIENTE: h4 → h3 -->
-          <h4 class="card-title">Máster Universitario en Ciberseguridad y Tecnologías Cloud</h4>
+          <!-- I-02 · APLICADO: h4 → h3 -->
+          <h3 class="card-title">Máster Universitario en Ciberseguridad y Tecnologías Cloud</h3>
           <p class="card-authors">Director: Dr. Fernando Martínez</p>
           <p class="card-source">Especialización en auditoría, seguridad de datos y entornos virtuales.</p>
 
@@ -282,8 +285,8 @@
 
       <!-- FORMULARIO DE TRÁMITES -->
       <section class="newsletter-box">
-        <!-- I-02 · PENDIENTE: h6 → h2 -->
-        <h6>Solicitud de Información y Admisión</h6>
+        <!-- I-02 · APLICADO: h6 → h2 -->
+        <h2>Solicitud de Información y Admisión</h2>
         <p>Reciba detalles sobre los plazos de matriculación, becas y visitas al campus.</p>
         
         <form id="newsletter-form">
@@ -314,12 +317,12 @@
     </main>
 
     <!-- COLUMNA DERECHA: AGENDA Y EVENTOS DEL CAMPUS -->
-    <!-- I-22 · PENDIENTE: aria-label="Agenda e investigación" en este <aside> -->
-    <aside class="col-right">
+    <!-- I-22 · APLICADO: el <aside> lleva nombre para distinguirlo del otro -->
+    <aside class="col-right" aria-label="Agenda e investigación">
       
       <div class="widget-box">
-        <!-- I-02 · PENDIENTE: h3 → h2 -->
-        <h3>Agenda del Campus</h3>
+        <!-- I-02 · APLICADO: h3 → h2 -->
+        <h2>Agenda del Campus</h2>
         <ul class="agenda-list">
           <li>
             <span class="event-date">14 OCT</span>
@@ -339,8 +342,8 @@
       <hr class="sidebar-divider">
 
       <div class="widget-box">
-        <!-- I-02 · PENDIENTE: h3 → h2 -->
-        <h3>Investigación</h3>
+        <!-- I-02 · APLICADO: h3 → h2 -->
+        <h2>Investigación</h2>
         <p class="sidebar-text">Grupos de investigación destacados en robótica aplicada, materiales sostenibles e inteligencia artificial.</p>
       </div>
 
