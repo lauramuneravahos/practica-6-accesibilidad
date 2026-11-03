@@ -208,7 +208,7 @@
         <!-- ARTÍCULO 3 -->
         <article class="academic-card">
           <!-- I-15 · APLICADO: el indicador de PDF es un enlace real, no un <div> que parece un botón -->
-          <a class="pdf-indicator" href="https://example.com/pdf" target="_blank">
+          <a class="pdf-indicator" href="https://example.com/pdf" target="_blank" rel="noopener">
             <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="PDF"> Descargar Guía Académica Completa<span class="sr-only"> (abre en una pestaña nueva)</span>
           </a>
           
@@ -218,7 +218,8 @@
           <p class="card-source">Diseño de máquinas, estructuras industriales y sistemas térmicos.</p>
 
 
-          <a href="https://example.com/pdf" target="_blank" class="link-primary">Descargar PDF completo (abre en pestaña nueva)</a>
+          <!-- I-25 · APLICADO: el texto avisa de que abre en pestaña nueva -->
+          <a href="https://example.com/pdf" target="_blank" rel="noopener" class="link-primary">Descargar PDF completo (abre en pestaña nueva)</a>
         </article>
 
         <!-- ARTÍCULO 4 -->
