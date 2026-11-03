@@ -51,11 +51,11 @@ header {
   flex-direction: column;
 }
 
-/* I-03 · PENDIENTE: color #c85a7c → #f3d2dc (2,81:1 → 8,12:1) */
+
 .logo-text {
   font-size: 26px;
   font-weight: bold;
-  color: #c85a7c;
+  color: #f3d2dc;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -300,9 +300,9 @@ header {
   justify-content: space-between;
 }
 
-/* I-04 · PENDIENTE: color #aaa → #595959 (2,32:1 → 7,00:1) */
+
 .card-meta {
-  color: #aaa;
+  color: #595959;
   font-size: 11px;
   margin-bottom: 8px;
   font-weight: bold;
@@ -469,7 +469,7 @@ header {
 }
 
 /* COOKIES Y FOOTER */
-/* I-21 · PENDIENTE: dejar hueco a los botones y permitir que el aviso se cierre */
+
 .cookie-banner {
   background: #333;
   color: #fff;
@@ -477,9 +477,18 @@ header {
   position: fixed;
   bottom: 0;
   width: 100%;
+  box-sizing: border-box;
   font-size: 12px;
   text-align: center;
   z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.cookie-banner.hidden {
+  display: none;
 }
 
 footer {
@@ -522,7 +531,7 @@ footer {
   gap: 12px;
 }
 
-/* I-17 · PENDIENTE: el color deja de ser el único indicador (el texto va en .sr-only, en el HTML) */
+
 .status-badge {
   display: inline-block;
   width: 8px;
@@ -534,8 +543,6 @@ footer {
 .open-access { background-color: #00aa00; }
 .restricted { background-color: #ff0000; }
 
-/* I-20 · PENDIENTE: borrar esta regla junto con el <audio> */
-#bg-audio { display: none; }
 
 /* Texto visible solo para lectores de pantalla (I-11, I-12, I-17) */
 .sr-only {
