@@ -432,7 +432,7 @@ Estas son las correcciones que hemos preparado para la versión accesible. Todav
 | I-05 | `aria-label` en los tres enlaces sociales | Propuesto |
 | I-06 | `id="email-contact"` para el correo e `id="accept-terms"` para el checkbox | Propuesto |
 | I-07 | Cerrar bien el párrafo, sin el `<div>` | Propuesto |
-| I-08 | Abrir el menú también con `:focus-within` y con JavaScript (`aria-expanded`, `Enter`, `Espacio`, `Escape`) | Propuesto |
+| I-08 | `<button>` con `aria-expanded` y `aria-controls`; `Enter`, `Espacio` y `Escape` desde `script.js` con la clase `.is-open`, sin depender solo de `:hover` | Propuesto |
 | I-09 | Subir la especificidad: `.main-nav ul.dropdown-content { display: none; }` y mostrar solo el panel del elemento activo | Propuesto |
 | I-10 | Cambiar `outline: none` por un `outline` visible en `:focus-visible` | Propuesto |
 | I-11 | `<label>` para cada campo del buscador y `type="search"` | Propuesto |
@@ -446,7 +446,7 @@ Estas son las correcciones que hemos preparado para la versión accesible. Todav
 | I-19 | Poner textos distintos, por ejemplo «Ver el Grado en Ingeniería Informática» | Propuesto |
 | I-20 | Quitar `autoplay` y el audio de fondo | Propuesto |
 | I-21 | Botones «Aceptar» y «Rechazar» y poder cerrarlo | Propuesto |
-| I-22 | Enlace «Saltar al contenido» y meter el banner dentro de `<main>` | Propuesto |
+| I-22 | Enlace «Saltar al contenido», `aria-label` en el banner y en los dos `<aside>`, y `<main id="contenido" tabindex="-1">` | Propuesto |
 | I-23 | Añadir `meta viewport` | Propuesto |
 | I-24 | `type="email" autocomplete="email"` | Propuesto |
 | I-25 | Añadir «(abre en una pestaña nueva)» al texto del enlace | Propuesto |
@@ -485,8 +485,9 @@ Estas son las correcciones que hemos preparado para la versión accesible. Todav
 /* El selector incluye la etiqueta ul para ganar a .main-nav ul { display: flex } */
 .main-nav ul.dropdown-content { display: none; }
 
+/* script.js pone y quita .is-open y actualiza aria-expanded */
 .dropdown:hover > ul.dropdown-content,
-.dropdown:focus-within > ul.dropdown-content { display: block; }
+.dropdown.is-open > ul.dropdown-content { display: block; }
 ```
 
 **Buscador con etiquetas**

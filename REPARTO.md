@@ -220,7 +220,7 @@ La rama remota se puede borrar desde el propio pull request con «Delete branch�
 |---|---|---|
 | **I-01** | `<html lang="en">` → `<html lang="es">` | `index.html` |
 | **I-02** | El `<h2>` del banner pasa a `<h1>`. Las secciones (`<h3>`) y el `<h6>` del formulario pasan a `<h2>`; los títulos de tarjeta, a `<h3>`. Hay que actualizar los selectores CSS que dependen de la etiqueta (`.hero-campus h2`, `.widget-box h3`, `.section-header h3`, `.newsletter-box h6`) | `index.html` + `styles.css` |
-| **I-08** | Abrir el menú también con teclado: `:focus-within`, `aria-expanded` y cierre con `Escape` | `index.html` + `styles.css` + `script.js` |
+| **I-08** | Abrir el menú también con teclado: `<button>` con `aria-expanded`, apertura con Intro/Espacio, cierre con `Escape` y al salir del menú (clase `.is-open`) | `index.html` + `styles.css` + `script.js` |
 | **I-09** | Arreglar la especificidad: `.main-nav ul.dropdown-content { display: none; }` y mostrar solo el panel del elemento activo | `styles.css` |
 | **I-10** | Quitar `*:focus { outline: none }` y poner un `outline` visible en `:focus-visible` | `styles.css` |
 | **I-15** | Los tres enlaces falsos pasan a `<a href>` o `<button>`; «Portal Estudiantes» deja de ser un `<span>` y de usar `alert()` | `index.html` + `script.js` |
@@ -303,7 +303,7 @@ Además, este bloque crea la clase **`.sr-only`** en `styles.css` (texto solo pa
 
 | Bloque | Responsable | Incidencias | Estado |
 |---|---|---|---|
-| 1 · Cabecera y estructura | Laura | I-01, I-02, I-08, I-09, I-10, I-15, I-22, I-23 | Sin empezar |
+| 1 · Cabecera y estructura | Laura | I-01, I-02, I-08, I-09, I-10, I-15, I-22, I-23 | Terminado (rama `fix/cabecera`) |
 | 2 · Formulario y controles | Iago | I-06, I-11, I-12, I-13, I-14, I-16, I-24 | Sin empezar |
 | 3 · Contenido y pie | Inés | I-03, I-04, I-05, I-07, I-17, I-18, I-19, I-20, I-21, I-25 | Sin empezar |
 | Validación y memoria | Laura | T.A.W., AChecker, W3C, axe-core | Pendiente de Pages |
