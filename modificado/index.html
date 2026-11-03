@@ -207,9 +207,10 @@
 
         <!-- ARTÍCULO 3 -->
         <article class="academic-card">
-          <div class="pdf-indicator">
-            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="Icono de PDF"> Descargar Guía Académica Completa
-          </div>
+          <!-- I-15 · APLICADO: el indicador de PDF es un enlace real, no un <div> que parece un botón -->
+          <a class="pdf-indicator" href="https://example.com/pdf" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="PDF"> Descargar Guía Académica Completa<span class="sr-only"> (abre en una pestaña nueva)</span>
+          </a>
           
           <!-- I-02 · APLICADO: h4 → h3 -->
           <h3 class="card-title card-title-spaced">Grado en Ingeniería Mecánica</h3>
