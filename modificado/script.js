@@ -1,4 +1,4 @@
-// MARCAS DE TRABAJO · cada «I-xx · PENDIENTE» señala dónde va una corrección (apartado 6 de memoria.md); al terminar, borrar todas las marcas
+// MARCAS DE TRABAJO · las marcas «I-xx · APLICADO» señalan dónde está cada corrección (apartado 6 de memoria.md)
 document.addEventListener('DOMContentLoaded', () => {
 
   // I-08 · APLICADO: menú desplegable accesible con ratón y con teclado
@@ -27,7 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       const abierto = dropdown.classList.toggle('is-open');
       button.setAttribute('aria-expanded', String(abierto));
+      // Si se cierra con el ratón encima, el :hover no debe volver a mostrarlo
+      dropdown.classList.toggle('is-closed', !abierto);
       if (abierto) closeAllDropdowns(dropdown);
+    });
+
+    // I-08 · APLICADO: el :hover del CSS también abre el panel, así que el estado ARIA lo refleja
+    dropdown.addEventListener('mouseenter', () => {
+      dropdown.classList.remove('is-closed');
+      if (!dropdown.classList.contains('is-open')) button.setAttribute('aria-expanded', 'true');
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('is-closed');
+      if (!dropdown.classList.contains('is-open')) button.setAttribute('aria-expanded', 'false');
     });
 
     // Escape cierra el panel y devuelve el foco al botón
@@ -53,15 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!event.target.closest('.dropdown')) closeAllDropdowns(null);
   });
 
-  // I-16 · PENDIENTE: escuchar el evento submit del formulario, no el click del <div>
-  const btnSubmit = document.getElementById('btn-submit-form');
   const newsletterForm = document.getElementById('newsletter-form');
-  
-  if (btnSubmit && newsletterForm) {
-    btnSubmit.addEventListener('click', () => {
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       alert('¡Solicitud enviada correctamente!');
     });
   }
 
-  // I-21 · PENDIENTE: cerrar el aviso de cookies desde los botones Aceptar y Rechazar
+  // I-21 · APLICADO: los botones Aceptar y Rechazar cierran el aviso de cookies
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    document.body.classList.add('has-cookie');
+    cookieBanner.querySelectorAll('button').forEach((boton) => {
+      boton.addEventListener('click', () => {
+        cookieBanner.classList.add('hidden');
+        document.body.classList.remove('has-cookie');
+      });
+    });
+  }
 });

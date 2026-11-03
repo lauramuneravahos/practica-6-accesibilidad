@@ -88,12 +88,15 @@
       <h1>Escuela Politécnica Superior de Zamora</h1>
       <p class="hero-subtitle">Ingeniería, Edificación y Tecnología en el Campus Viriato</p>
       
-      <!-- I-11 · PENDIENTE: envolver en <form role="search">, con un <label class="sr-only"> por campo y type="search" -->
-      <div class="search-box">
-        <input type="text" placeholder="Buscar grados, asignaturas, profesorado..." id="search-input">
-        <input type="text" placeholder="Cód. Asignatura">
-        <button class="btn-search">Buscar</button>
-      </div>
+      <form role="search" action="#">
+        <div class="search-box">
+          <label for="search-input" class="sr-only">Buscar grados, asignaturas o profesorado</label>
+          <input type="search" placeholder="Buscar grados, asignaturas, profesorado..." id="search-input">
+          <label for="search-code" class="sr-only">Código de asignatura</label>
+          <input type="text" placeholder="Cód. Asignatura" id="search-code">
+          <button type="submit" class="btn-search">Buscar</button>
+        </div>
+      </form>
 
       <p class="search-info">
         Busca en nuestra base de datos académica más de 18 millones de artículos.
@@ -124,12 +127,12 @@
       <div class="widget-box">
         <!-- I-02 · APLICADO: h3 → h2 -->
         <h2>Filtrar Titulaciones</h2>
-        <!-- I-14 · PENDIENTE: reescribir el texto: en la página no hay «controles con forma circular» -->
-        <p class="filter-instruction">Para filtrar la búsqueda, utilice los controles con forma circular ubicados en el bloque de la derecha.</p>
+        <!-- I-14 · APLICADO: texto acorde con la casilla que hay debajo -->
+        <p class="filter-instruction">Para filtrar las titulaciones, marque la siguiente casilla de verificación:</p>
         
         <div class="filter-options">
-          <!-- I-14 · PENDIENTE: <custom-checkbox> pasa a <input type="checkbox" id="solo-vacantes"> con su <label> -->
-          <custom-checkbox checked="false">Mostrar solo plazas vacantes</custom-checkbox>
+          <input type="checkbox" id="solo-vacantes">
+          <label for="solo-vacantes">Mostrar solo plazas vacantes</label>
         </div>
       </div>
 
@@ -157,12 +160,12 @@
         
         <!-- ARTÍCULO 1 -->
         <article class="academic-card">
-          <!-- I-18 · PENDIENTE: reescribir el alt: repite «imagen» y no describe la foto -->
-          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Imagen de la imagen del grado en ingenieria informatica">
+         
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Portátil mostrando código de programación">
           
           <div class="card-meta">
-            <!-- I-17 · PENDIENTE: añadir el estado en texto con .sr-only, no solo con el color (igual en las seis tarjetas) -->
-            <span class="status-badge open-access"></span> Grado Oficial • 240 ECTS
+
+            <span class="status-badge open-access"><span class="sr-only">Acceso abierto</span></span> Grado Oficial • 240 ECTS
           </div>
 
           <!-- I-02 · APLICADO: h4 → h3 -->
@@ -175,17 +178,17 @@
             <span class="metric">Nota de corte: 7.82</span>
           </div>
 
-          <!-- I-19 · PENDIENTE: texto propio y en español («Ver el Grado en Ingeniería Informática») -->
-          <a href="#" class="link-primary">Read more</a>
+         
+          <a href="#" class="link-primary">Ver el Grado en Ingenieria Informática</a>
         </article>
 
         <!-- ARTÍCULO 2 -->
         <article class="academic-card">
-          <!-- I-18 · PENDIENTE: este alt vacío oculta una foto informativa: describirla -->
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=300&q=80" class="card-img" alt="">
+        
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Plano arquitectónico sobre una mesa de dibujo">
           
           <div class="card-meta">
-            <span class="status-badge restricted"></span> Grado Oficial • 240 ECTS
+            <span class="status-badge restricted"><span class="sr-only">Acceso restringido</span></span> Grado Oficial • 240 ECTS
           </div>
 
           <!-- I-02 · APLICADO: h4 → h3 -->
@@ -198,32 +201,34 @@
             <span class="metric">Nota de corte: 5.00</span>
           </div>
 
-          <!-- I-19 · PENDIENTE: texto propio y en español («Ver el Grado en Arquitectura Técnica») -->
-          <a href="#" class="link-primary">Read more</a>
+
+          <a href="#" class="link-primary">Ver el Grado en Arquitectura Técnica </a>
         </article>
 
         <!-- ARTÍCULO 3 -->
         <article class="academic-card">
-          <div class="pdf-indicator">
-            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="Icono de PDF"> Descargar Guía Académica Completa
-          </div>
+          <!-- I-15 · APLICADO: el indicador de PDF es un enlace real, no un <div> que parece un botón -->
+          <a class="pdf-indicator" href="https://example.com/pdf" target="_blank" rel="noopener">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="16" height="16" alt="PDF"> Descargar Guía Académica Completa<span class="sr-only"> (abre en una pestaña nueva)</span>
+          </a>
           
           <!-- I-02 · APLICADO: h4 → h3 -->
           <h3 class="card-title card-title-spaced">Grado en Ingeniería Mecánica</h3>
           <p class="card-authors">Coordinador: Dr. Javier Gómez</p>
           <p class="card-source">Diseño de máquinas, estructuras industriales y sistemas térmicos.</p>
 
-          <!-- I-19 + I-25 · PENDIENTE: texto en español y avisar de que abre en pestaña nueva (o quitar target="_blank") -->
-          <a href="https://example.com/pdf" target="_blank" class="link-primary">Download full text PDF</a>
+
+          <!-- I-25 · APLICADO: el texto avisa de que abre en pestaña nueva -->
+          <a href="https://example.com/pdf" target="_blank" rel="noopener" class="link-primary">Descargar PDF completo (abre en pestaña nueva)</a>
         </article>
 
         <!-- ARTÍCULO 4 -->
         <article class="academic-card">
-          <!-- I-18 · OK: este alt ya describe la foto, no hace falta cambiarlo -->
+       
           <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Paneles solares e instalaciones de energía renovable en el campus">
           
           <div class="card-meta">
-            <span class="status-badge open-access"></span> Grado Oficial • 240 ECTS
+            <span class="status-badge open-access"><span class="sr-only">Acceso abierto</span></span> Grado Oficial • 240 ECTS
           </div>
 
           <!-- I-02 · APLICADO: h4 → h3 -->
@@ -244,7 +249,7 @@
           <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Estudiante en laboratorio de ensayos de materiales de la EPS de Zamora">
           
           <div class="card-meta">
-            <span class="status-badge restricted"></span> Grado Oficial • 240 ECTS
+            <span class="status-badge restricted"><span class="sr-only">Acceso restringido</span></span> Grado Oficial • 240 ECTS
           </div>
 
           <!-- I-02 · APLICADO: h4 → h3 -->
@@ -265,7 +270,7 @@
           <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" class="card-img" alt="Servidores e infraestructura de red del Campus Viriato">
           
           <div class="card-meta">
-            <span class="status-badge open-access"></span> Máster Oficial • 60 ECTS
+            <span class="status-badge open-access"><span class="sr-only">Acceso abierto</span></span> Máster Oficial • 60 ECTS
           </div>
 
           <!-- I-02 · APLICADO: h4 → h3 -->
@@ -289,28 +294,26 @@
         <h2>Solicitud de Información y Admisión</h2>
         <p>Reciba detalles sobre los plazos de matriculación, becas y visitas al campus.</p>
         
-        <form id="newsletter-form">
+        <form id="newsletter-form" action="#" method="post">
           <p><span class="required-mark">*</span> Introduzca sus datos obligatorios:</p>
 
           <div class="form-group">
-            <!-- I-12 · PENDIENTE: un <label> por campo, required, autocomplete y mensaje de error (también en el correo) -->
-            <input type="text" id="fname" placeholder="Nombre y apellidos del solicitante">
+            <label for="full-name">Nombre y apellidos <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" name="full-name" autocomplete="name" required placeholder="Nombre y apellidos del solicitante" aria-describedby="error-name">
+            <span class="error-message" id="error-name">El nombre y apellidos son obligatorios.</span>
           </div>
           <div class="form-group">
-            <!-- I-06 · PENDIENTE: id="email-contact" (ahora se repite abajo, en el checkbox) -->
-            <!-- I-24 · PENDIENTE: type="email" y autocomplete="email" -->
-            <input type="text" id="email-field" placeholder="Correo electrónico de contacto">
+            <label for="email-contact">Correo electrónico <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="email" id="email-contact" name="email-contact" autocomplete="email" required placeholder="Correo electrónico de contacto" aria-describedby="error-email">
+            <span class="error-message" id="error-email">Introduzca una dirección de correo electrónico válida.</span>
           </div>
 
           <div class="form-group-checkbox">
-            <!-- I-06 · PENDIENTE: id="accept-terms" -->
-            <input type="checkbox" id="email-field"> 
-            <!-- I-13 · PENDIENTE: for="accept-terms" -->
-            <label for="email-field">Acepto los términos y condiciones del tratamiento de datos</label>
+            <input type="checkbox" id="accept-terms" required> 
+            <label for="accept-terms">Acepto los términos y condiciones del tratamiento de datos</label>
           </div>
 
-          <!-- I-16 · PENDIENTE: el <div> pasa a <button type="submit"> (y en script.js, evento submit) -->
-          <div class="custom-btn" id="btn-submit-form">Enviar Solicitud</div>
+          <button type="submit" class="custom-btn" id="btn-submit-form">Enviar Solicitud</button>
         </form>
       </section>
 
@@ -352,9 +355,12 @@
   </div>
 
   <!-- AVISO DE COOKIES -->
-  <!-- I-21 · PENDIENTE: role="region", aria-label y botones Aceptar y Rechazar que lo cierren -->
-  <div class="cookie-banner">
+
+  <!-- I-21 · APLICADO: el aviso se cierra con los botones Aceptar y Rechazar -->
+  <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de cookies">
     <p>La Universidad de Salamanca utiliza cookies propias y de terceros para fines analíticos. Al continuar navegando acepta su uso.</p>
+    <button type="button">Aceptar</button>
+    <button type="button">Rechazar</button>
   </div>
 
   <!-- PIE DE PÁGINA CON CONTACTO Y REDES -->
@@ -378,20 +384,18 @@
 
       <p class="footer-copy">© 2026 Escuela Politécnica Superior de Zamora — Universidad de Salamanca.</p>
       
-      <!-- I-05 · PENDIENTE: aria-label en los tres enlaces («Facebook de la EPS de Zamora», «X de la EPS de Zamora», «LinkedIn de la EPS de Zamora») -->
+    
+      <!-- I-05 · APLICADO: los tres enlaces llevan nombre con aria-label -->
       <div class="social-links">
-        <a href="#"><img src="https://via.placeholder.com/32x32?text=FB" alt=""></a>
-        <a href="#"><img src="https://via.placeholder.com/32x32?text=TW" alt=""></a>
-        <a href="#"><img src="https://via.placeholder.com/32x32?text=LN" alt=""></a>
+        <a href="#" aria-label="Facebook de la EPS de Zamora"><img src="https://via.placeholder.com/32x32?text=FB" alt=""></a>
+        <a href="#" aria-label="X de la EPS de Zamora"><img src="https://via.placeholder.com/32x32?text=TW" alt=""></a>
+        <a href="#" aria-label="LinkedIn de la EPS de Zamora"><img src="https://via.placeholder.com/32x32?text=LN" alt=""></a>
       </div>
 
-      <!-- I-07 · PENDIENTE: cerrar el párrafo sin el <div> de dentro ni el cierre sobrante -->
-      <p class="trademark-text">EPS Zamora® es una marca académica registrada de la USAL.<div></p></div>
 
-      <!-- I-20 · PENDIENTE: eliminar el <audio autoplay> y su regla #bg-audio en styles.css -->
-      <audio id="bg-audio" autoplay loop>
-        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-      </audio>
+      <p class="trademark-text">EPS Zamora® es una marca académica registrada de la USAL.</p>
+
+
     </div>
   </footer>
 
