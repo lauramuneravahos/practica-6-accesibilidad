@@ -64,8 +64,8 @@
               <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-estudiantes">Estudiantes ▾</button>
               <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
               <ul class="dropdown-content" id="menu-estudiantes">
-                <!-- I-15 · PENDIENTE: el <span> pasa a <a class="nav-item-btn" href="#"> y se quita su alert() -->
-                <li><span class="nav-item-btn" id="btn-portal">Portal Estudiantes</span></li>
+                <!-- I-15 · APLICADO: el portal es un enlace real y ya no abre un alert() -->
+                <li><a class="nav-item-btn" href="#">Portal Estudiantes</a></li>
                 <li><a href="#">Horarios y Aulas</a></li>
                 <li><a href="#">Exámenes y Calendario</a></li>
                 <li><a href="#">Prácticas en Empresas</a></li>
@@ -110,11 +110,11 @@
       <div class="widget-box">
         <!-- I-02 · APLICADO: h3 → h2 -->
         <h2>Servicios y Accesos</h2>
-        <!-- I-15 · PENDIENTE: los tres <a> necesitan href: #tfg, #practicas y #erasmus -->
+        <!-- I-15 · APLICADO: los accesos son enlaces reales, con href -->
         <ul class="sidebar-list">
-          <li><a class="fake-link" id="link-ai">Trabajos Fin de Grado (TFG)</a></li>
-          <li><a class="fake-link" id="link-energy">Prácticas en Empresas</a></li>
-          <li><a class="fake-link" id="link-biotech">Programas de Movilidad Erasmus</a></li>
+          <li><a class="fake-link" href="#tfg">Trabajos Fin de Grado (TFG)</a></li>
+          <li><a class="fake-link" href="#practicas">Prácticas en Empresas</a></li>
+          <li><a class="fake-link" href="#erasmus">Programas de Movilidad Erasmus</a></li>
         </ul>
       </div>
 

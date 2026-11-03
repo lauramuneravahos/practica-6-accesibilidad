@@ -53,14 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!event.target.closest('.dropdown')) closeAllDropdowns(null);
   });
 
-  // I-15 · PENDIENTE: borrar este alert(): el portal ya es un <a href>
-  const btnPortal = document.getElementById('btn-portal');
-  if (btnPortal) {
-    btnPortal.addEventListener('click', () => {
-      alert('Acceso al Portal de Estudiantes de la USAL');
-    });
-  }
-
   // I-16 · PENDIENTE: escuchar el evento submit del formulario, no el click del <div>
   const btnSubmit = document.getElementById('btn-submit-form');
   const newsletterForm = document.getElementById('newsletter-form');
@@ -70,22 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('¡Solicitud enviada correctamente!');
     });
   }
-
-  // I-15 · PENDIENTE: borrar este bloque: los enlaces ya llevan href en el HTML
-  const fakeLinks = [
-    { id: 'link-ai', hash: '#tfg' },
-    { id: 'link-energy', hash: '#practicas' },
-    { id: 'link-biotech', hash: '#erasmus' }
-  ];
-
-  fakeLinks.forEach(item => {
-    const elem = document.getElementById(item.id);
-    if (elem) {
-      elem.addEventListener('click', () => {
-        location.href = item.hash;
-      });
-    }
-  });
 
   // I-21 · PENDIENTE: cerrar el aviso de cookies desde los botones Aceptar y Rechazar
 });
