@@ -421,33 +421,33 @@ Solo fallan los dos primeros, que son justo los que marcó axe-core.
 
 ## 6. Soluciones propuestas y cambios en el código
 
-Estas son las correcciones que hemos preparado para la versión accesible. Todavía no están aplicadas en la carpeta de la versión original, por eso la columna de estado pone «propuesto».
+Estas son las correcciones que hemos preparado para la versión accesible. La carpeta `original/` se deja intacta: las que ya están en `modificado/` figuran como «Aplicado» y las que faltan, como «Propuesto».
 
 | ID | Cambio | Estado |
 |---|---|---|
-| I-01 | `<html lang="es">` | Propuesto |
-| I-02 | Un `<h1>` para el título principal y `<h2>` para las secciones y el formulario | Propuesto |
+| I-01 | `<html lang="es">` | Aplicado |
+| I-02 | Un `<h1>` para el título principal y `<h2>` para las secciones y el formulario | Aplicado |
 | I-03 | Poner el logotipo en blanco o en `#f3d2dc` | Propuesto |
 | I-04 | `.card-meta { color: #595959; }` | Propuesto |
 | I-05 | `aria-label` en los tres enlaces sociales | Propuesto |
 | I-06 | `id="email-contact"` para el correo e `id="accept-terms"` para el checkbox | Propuesto |
 | I-07 | Cerrar bien el párrafo, sin el `<div>` | Propuesto |
-| I-08 | `<button>` con `aria-expanded` y `aria-controls`; `Enter`, `Espacio` y `Escape` desde `script.js` con la clase `.is-open`, sin depender solo de `:hover` | Propuesto |
-| I-09 | Subir la especificidad: `.main-nav ul.dropdown-content { display: none; }` y mostrar solo el panel del elemento activo | Propuesto |
-| I-10 | Cambiar `outline: none` por un `outline` visible en `:focus-visible` | Propuesto |
+| I-08 | `<button>` con `aria-expanded` y `aria-controls`; `Enter`, `Espacio` y `Escape` desde `script.js` con la clase `.is-open`, sin depender solo de `:hover` | Aplicado |
+| I-09 | Subir la especificidad: `.main-nav ul.dropdown-content { display: none; }` y mostrar solo el panel del elemento activo | Aplicado |
+| I-10 | Cambiar `outline: none` por un `outline` visible en `:focus-visible` | Aplicado |
 | I-11 | `<label>` para cada campo del buscador y `type="search"` | Propuesto |
 | I-12 | `<label>` para cada campo, `required`, `autocomplete` y mensajes de error | Propuesto |
 | I-13 | Asociar la etiqueta al checkbox correcto | Propuesto |
 | I-14 | Cambiar `<custom-checkbox>` por un `<input type="checkbox">` con su `<label>` | Propuesto |
-| I-15 | Convertir los accesos en `<a href>` o `<button>` de verdad | Propuesto |
+| I-15 | Convertir los accesos en `<a href>` o `<button>` de verdad | Aplicado |
 | I-16 | `<button type="submit">Enviar Solicitud</button>` | Propuesto |
 | I-17 | Añadir el texto del estado («Plazas disponibles» / «Plazas restringidas») | Propuesto |
 | I-18 | Escribir bien los `alt` y añadir `lang="en"` a los textos en inglés | Propuesto |
 | I-19 | Poner textos distintos, por ejemplo «Ver el Grado en Ingeniería Informática» | Propuesto |
 | I-20 | Quitar `autoplay` y el audio de fondo | Propuesto |
 | I-21 | Botones «Aceptar» y «Rechazar» y poder cerrarlo | Propuesto |
-| I-22 | Enlace «Saltar al contenido», `aria-label` en el banner y en los dos `<aside>`, y `<main id="contenido" tabindex="-1">` | Propuesto |
-| I-23 | Añadir `meta viewport` | Propuesto |
+| I-22 | Enlace «Saltar al contenido», `aria-label` en el banner y en los dos `<aside>`, y `<main id="contenido" tabindex="-1">` | Aplicado |
+| I-23 | Añadir `meta viewport` | Aplicado |
 | I-24 | `type="email" autocomplete="email"` | Propuesto |
 | I-25 | Añadir «(abre en una pestaña nueva)» al texto del enlace | Propuesto |
 
