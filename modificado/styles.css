@@ -568,3 +568,40 @@ footer {
   white-space: nowrap;
   border: 0;
 }
+
+/* MAQUETACIÓN · en pantallas estrechas las tres columnas se apilan para que no haya scroll horizontal */
+@media (max-width: 900px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .col-center { order: 1; }
+  .col-left { order: 2; }
+  .col-right { order: 3; }
+
+  .search-box {
+    flex-wrap: wrap;
+  }
+
+  .search-box input:first-of-type,
+  .search-box input:nth-of-type(2) {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .btn-search {
+    width: 100%;
+  }
+}

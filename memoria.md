@@ -11,7 +11,7 @@
 | Integrantes | Laura Munera Vahos, Iago Fernández Varela e Inés Otero Amon |
 | Página analizada | `index.html`, `styles.css` y `script.js` (versión original) |
 | Repositorio | https://github.com/lauramuneravahos/practica-6-accesibilidad |
-| Fecha | Octubre de 2026 |
+| Fecha | Noviembre 03 de 2026 |
 
 ---
 
