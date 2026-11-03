@@ -114,8 +114,8 @@ header {
   padding: 0 20px;
 }
 
-/* I-02 · PENDIENTE: .hero-campus h2 → .hero-campus h1 */
-.hero-campus h2 {
+/* I-02 · APLICADO: .hero-campus h2 → .hero-campus h1 */
+.hero-campus h1 {
   margin: 0;
   color: #520019;
   font-size: 24px;
@@ -170,8 +170,8 @@ header {
   padding: 0 20px;
 }
 
-/* I-02 · PENDIENTE: .widget-box h3 → .widget-box h2 */
-.widget-box h3 {
+/* I-02 · APLICADO: .widget-box h3 → .widget-box h2 */
+.widget-box h2 {
   margin: 0 0 12px 0;
   font-size: 16px;
   color: #7a0026;
@@ -244,8 +244,8 @@ header {
   margin-bottom: 20px;
 }
 
-/* I-02 · PENDIENTE: .section-header h3 → .section-header h2 */
-.section-header h3 {
+/* I-02 · APLICADO: .section-header h3 → .section-header h2 */
+.section-header h2 {
   margin: 0;
   color: #7a0026;
   font-size: 20px;
@@ -379,8 +379,8 @@ header {
   border: 1px solid #ffeba3;
 }
 
-/* I-02 · PENDIENTE: .newsletter-box h6 → .newsletter-box h2 */
-.newsletter-box h6 {
+/* I-02 · APLICADO: .newsletter-box h6 → .newsletter-box h2 */
+.newsletter-box h2 {
   margin: 0 0 8px 0;
   font-size: 15px;
   color: #856404;
