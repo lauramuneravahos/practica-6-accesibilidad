@@ -36,10 +36,10 @@
             <li><a href="#">Inicio</a></li>
             
             <li class="dropdown">
-              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-centro"> -->
-              <a href="#" class="dropbtn">El Centro ▾</a>
-              <!-- I-08 · PENDIENTE: añadir id="menu-centro" al <ul> -->
-              <ul class="dropdown-content">
+              <!-- I-08 · APLICADO: el disparador es un <button> con aria-expanded y aria-controls -->
+              <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-centro">El Centro ▾</button>
+              <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
+              <ul class="dropdown-content" id="menu-centro">
                 <li><a href="#">Presentación y Saludo</a></li>
                 <li><a href="#">Equipo Directivo</a></li>
                 <li><a href="#">Juntas y Comisiones</a></li>
@@ -48,10 +48,10 @@
             </li>
 
             <li class="dropdown">
-              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-titulaciones"> -->
-              <a href="#" class="dropbtn">Titulaciones ▾</a>
-              <!-- I-08 · PENDIENTE: añadir id="menu-titulaciones" al <ul> -->
-              <ul class="dropdown-content">
+              <!-- I-08 · APLICADO: el disparador es un <button> con aria-expanded y aria-controls -->
+              <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-titulaciones">Titulaciones ▾</button>
+              <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
+              <ul class="dropdown-content" id="menu-titulaciones">
                 <li><a href="#">Grados Universitarios</a></li>
                 <li><a href="#">Másteres Oficiales</a></li>
                 <li><a href="#">Doctorado e Investigación</a></li>
@@ -60,10 +60,10 @@
             </li>
 
             <li class="dropdown">
-              <!-- I-08 · PENDIENTE: este <a class="dropbtn"> pasa a <button aria-expanded="false" aria-controls="menu-estudiantes"> -->
-              <a href="#" class="dropbtn">Estudiantes ▾</a>
-              <!-- I-08 · PENDIENTE: añadir id="menu-estudiantes" al <ul> -->
-              <ul class="dropdown-content">
+              <!-- I-08 · APLICADO: el disparador es un <button> con aria-expanded y aria-controls -->
+              <button type="button" class="dropbtn" aria-expanded="false" aria-controls="menu-estudiantes">Estudiantes ▾</button>
+              <!-- I-08 · APLICADO: id para que aria-controls apunte al panel -->
+              <ul class="dropdown-content" id="menu-estudiantes">
                 <!-- I-15 · PENDIENTE: el <span> pasa a <a class="nav-item-btn" href="#"> y se quita su alert() -->
                 <li><span class="nav-item-btn" id="btn-portal">Portal Estudiantes</span></li>
                 <li><a href="#">Horarios y Aulas</a></li>

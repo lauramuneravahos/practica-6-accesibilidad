@@ -58,13 +58,21 @@ header {
   gap: 15px;
 }
 
-.main-nav a, .nav-item-btn {
+.main-nav a, .main-nav .dropbtn, .nav-item-btn {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
   padding: 10px 12px;
   display: block;
+}
+
+/* I-08 · APLICADO: el disparador es un <button> y hay que quitarle el estilo del navegador */
+.dropbtn {
+  background: none;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -96,8 +104,9 @@ header {
   color: #7a0026;
 }
 
-/* I-08 · PENDIENTE: el panel se abre con la clase .is-open que pone script.js, no solo con :hover */
-.dropdown:hover .dropdown-content {
+/* I-08 · APLICADO: el panel se abre con el ratón (:hover) y con teclado o clic (clase .is-open) */
+.dropdown:hover > .dropdown-content,
+.dropdown.is-open > .dropdown-content {
   display: block;
 }
 
