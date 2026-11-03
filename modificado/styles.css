@@ -419,7 +419,8 @@ header {
   color: #856404;
 }
 
-.required-mark { color: red; font-weight: bold; }
+/* I-12 · APLICADO: la marca de obligatorio usa #a71d2a (6,65:1 sobre #fff3cd) */
+.required-mark { color: #a71d2a; font-weight: bold; }
 
 /* Estilos para etiquetas y mensajes de error en formulario (I-12) */
 .form-group label {
