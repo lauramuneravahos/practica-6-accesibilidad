@@ -88,12 +88,15 @@
       <h1>Escuela Politécnica Superior de Zamora</h1>
       <p class="hero-subtitle">Ingeniería, Edificación y Tecnología en el Campus Viriato</p>
       
-      <!-- I-11 · PENDIENTE: envolver en <form role="search">, con un <label class="sr-only"> por campo y type="search" -->
-      <div class="search-box">
-        <input type="text" placeholder="Buscar grados, asignaturas, profesorado..." id="search-input">
-        <input type="text" placeholder="Cód. Asignatura">
-        <button class="btn-search">Buscar</button>
-      </div>
+      <form role="search" action="#">
+        <div class="search-box">
+          <label for="search-input" class="sr-only">Buscar grados, asignaturas o profesorado</label>
+          <input type="search" placeholder="Buscar grados, asignaturas, profesorado..." id="search-input">
+          <label for="search-code" class="sr-only">Código de asignatura</label>
+          <input type="text" placeholder="Cód. Asignatura" id="search-code">
+          <button type="submit" class="btn-search">Buscar</button>
+        </div>
+      </form>
 
       <p class="search-info">
         Busca en nuestra base de datos académica más de 18 millones de artículos.
@@ -124,12 +127,12 @@
       <div class="widget-box">
         <!-- I-02 · APLICADO: h3 → h2 -->
         <h2>Filtrar Titulaciones</h2>
-        <!-- I-14 · PENDIENTE: reescribir el texto: en la página no hay «controles con forma circular» -->
-        <p class="filter-instruction">Para filtrar la búsqueda, utilice los controles con forma circular ubicados en el bloque de la derecha.</p>
+        <!-- I-14 · APLICADO: texto acorde con la casilla que hay debajo -->
+        <p class="filter-instruction">Para filtrar las titulaciones, marque la siguiente casilla de verificación:</p>
         
         <div class="filter-options">
-          <!-- I-14 · PENDIENTE: <custom-checkbox> pasa a <input type="checkbox" id="solo-vacantes"> con su <label> -->
-          <custom-checkbox checked="false">Mostrar solo plazas vacantes</custom-checkbox>
+          <input type="checkbox" id="solo-vacantes">
+          <label for="solo-vacantes">Mostrar solo plazas vacantes</label>
         </div>
       </div>
 
@@ -289,28 +292,26 @@
         <h2>Solicitud de Información y Admisión</h2>
         <p>Reciba detalles sobre los plazos de matriculación, becas y visitas al campus.</p>
         
-        <form id="newsletter-form">
+        <form id="newsletter-form" action="#" method="post">
           <p><span class="required-mark">*</span> Introduzca sus datos obligatorios:</p>
 
           <div class="form-group">
-            <!-- I-12 · PENDIENTE: un <label> por campo, required, autocomplete y mensaje de error (también en el correo) -->
-            <input type="text" id="fname" placeholder="Nombre y apellidos del solicitante">
+            <label for="full-name">Nombre y apellidos <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" name="full-name" autocomplete="name" required placeholder="Nombre y apellidos del solicitante" aria-describedby="error-name">
+            <span class="error-message" id="error-name">El nombre y apellidos son obligatorios.</span>
           </div>
           <div class="form-group">
-            <!-- I-06 · PENDIENTE: id="email-contact" (ahora se repite abajo, en el checkbox) -->
-            <!-- I-24 · PENDIENTE: type="email" y autocomplete="email" -->
-            <input type="text" id="email-field" placeholder="Correo electrónico de contacto">
+            <label for="email-contact">Correo electrónico <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="email" id="email-contact" name="email-contact" autocomplete="email" required placeholder="Correo electrónico de contacto" aria-describedby="error-email">
+            <span class="error-message" id="error-email">Introduzca una dirección de correo electrónico válida.</span>
           </div>
 
           <div class="form-group-checkbox">
-            <!-- I-06 · PENDIENTE: id="accept-terms" -->
-            <input type="checkbox" id="email-field"> 
-            <!-- I-13 · PENDIENTE: for="accept-terms" -->
-            <label for="email-field">Acepto los términos y condiciones del tratamiento de datos</label>
+            <input type="checkbox" id="accept-terms" required> 
+            <label for="accept-terms">Acepto los términos y condiciones del tratamiento de datos</label>
           </div>
 
-          <!-- I-16 · PENDIENTE: el <div> pasa a <button type="submit"> (y en script.js, evento submit) -->
-          <div class="custom-btn" id="btn-submit-form">Enviar Solicitud</div>
+          <button type="submit" class="custom-btn" id="btn-submit-form">Enviar Solicitud</button>
         </form>
       </section>
 
