@@ -27,7 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       const abierto = dropdown.classList.toggle('is-open');
       button.setAttribute('aria-expanded', String(abierto));
+      // Si se cierra con el ratón encima, el :hover no debe volver a mostrarlo
+      dropdown.classList.toggle('is-closed', !abierto);
       if (abierto) closeAllDropdowns(dropdown);
+    });
+
+    // I-08 · APLICADO: el :hover del CSS también abre el panel, así que el estado ARIA lo refleja
+    dropdown.addEventListener('mouseenter', () => {
+      dropdown.classList.remove('is-closed');
+      if (!dropdown.classList.contains('is-open')) button.setAttribute('aria-expanded', 'true');
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('is-closed');
+      if (!dropdown.classList.contains('is-open')) button.setAttribute('aria-expanded', 'false');
     });
 
     // Escape cierra el panel y devuelve el foco al botón

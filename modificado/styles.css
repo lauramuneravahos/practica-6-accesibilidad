@@ -126,6 +126,11 @@ header {
   display: block;
 }
 
+/* I-08 · APLICADO: si se cierra con un clic, el :hover no lo vuelve a mostrar hasta salir */
+.dropdown.is-closed > .dropdown-content {
+  display: none;
+}
+
 /* HERO BANNER */
 .hero-campus {
   background-color: #eadddf;
