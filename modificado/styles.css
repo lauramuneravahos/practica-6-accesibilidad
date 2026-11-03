@@ -13,7 +13,23 @@ body {
   outline-offset: 2px;
 }
 
-/* I-22 · PENDIENTE: estilo de .skip-link, oculto hasta que recibe el foco */
+/* I-22 · APLICADO: enlace de salto, fuera de la pantalla hasta que recibe el foco */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  z-index: 1000;
+  background: #7a0026;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* HEADER Y CABECERA */
 header {
   background-color: #7a0026;

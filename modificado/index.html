@@ -19,7 +19,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- I-22 · PENDIENTE: primer elemento del <body>: <a class="skip-link" href="#contenido">Saltar al contenido</a> -->
+  <!-- I-22 · APLICADO: primer elemento del <body>, enlace de salto al contenido -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- CABECERA INSTITUCIONAL CON MENÚ DESPLEGABLE -->
   <header>
@@ -80,8 +81,8 @@
   </header>
 
   <!-- BANNER CIENTÍFICO / BÚSQUEDA Y CABECERA -->
-  <!-- I-22 · PENDIENTE: aria-label="Portada de la EPS de Zamora" en la <section> (no moverla dentro de <main>) -->
-  <section class="hero-campus">
+  <!-- I-22 · APLICADO: la sección lleva nombre, así cuenta como landmark y no queda suelta -->
+  <section class="hero-campus" aria-label="Portada de la EPS de Zamora">
     <div class="hero-content">
       <!-- I-02 · APLICADO: h2 → h1 (será el único de la página) -->
       <h1>Escuela Politécnica Superior de Zamora</h1>
@@ -104,8 +105,8 @@
   <div class="main-layout">
     
     <!-- COLUMNA IZQUIERDA: ACCESOS DIRECTOS Y FILTROS -->
-    <!-- I-22 · PENDIENTE: aria-label="Accesos y filtros" en este <aside> -->
-    <aside class="col-left">
+    <!-- I-22 · APLICADO: el <aside> lleva nombre para distinguirlo del otro -->
+    <aside class="col-left" aria-label="Accesos y filtros">
       
       <div class="widget-box">
         <!-- I-02 · APLICADO: h3 → h2 -->
@@ -143,8 +144,8 @@
     </aside>
 
     <!-- COLUMNA CENTRAL: NOTICIAS Y OFERTA ACADÉMICA -->
-    <!-- I-22 · PENDIENTE: añadir id="contenido" y tabindex="-1" (destino del enlace de salto) -->
-    <main class="col-center">
+    <!-- I-22 · APLICADO: id y tabindex para que el enlace de salto pueda llevar el foco aquí -->
+    <main class="col-center" id="contenido" tabindex="-1">
       
       <div class="section-header">
         <!-- I-02 · APLICADO: h3 → h2 -->
@@ -316,8 +317,8 @@
     </main>
 
     <!-- COLUMNA DERECHA: AGENDA Y EVENTOS DEL CAMPUS -->
-    <!-- I-22 · PENDIENTE: aria-label="Agenda e investigación" en este <aside> -->
-    <aside class="col-right">
+    <!-- I-22 · APLICADO: el <aside> lleva nombre para distinguirlo del otro -->
+    <aside class="col-right" aria-label="Agenda e investigación">
       
       <div class="widget-box">
         <!-- I-02 · APLICADO: h3 → h2 -->
